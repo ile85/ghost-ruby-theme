@@ -1,0 +1,32 @@
+name: Deploy Ghost Theme
+
+on:
+  push:
+    branches:
+      - main  # Set to your default branch, e.g., main or master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v2
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '18'  # Specify the Node.js version you need
+
+    - name: Install Dependencies
+      run: npm install
+
+    - name: Zip Theme Files
+      run: zip -r theme.zip . -x "*.git*"
+
+    - name: Deploy Theme to Ghost
+      uses: TryGhost/action-deploy-theme@v1.4.1
+      with:
+        api-url: ${{ secrets.GHOST_ADMIN_API_URL }}
+        api-key: ${{ secrets.GHOST_ADMIN_API_KEY }}
+        theme-name: 'ruby'  # Replace with your theme's directory name
