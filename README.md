@@ -1,0 +1,1 @@
+# ghost-ruby-theme
