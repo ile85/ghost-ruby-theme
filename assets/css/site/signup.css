@@ -1,0 +1,113 @@
+:root {
+    --dark-bg: #121212; /* Dark grey for backgrounds */
+    --neon-blue: #72e1d1; /* Neon blue for accents */
+    --neon-pink: #ff4dbf; /* Neon pink for additional accents */
+    --light-grey: #cccccc; /* Light grey for text */
+    --font-sans: 'Roboto', sans-serif; /* Modern, clean sans-serif font */
+}
+
+body {
+    background-color: var(--dark-bg);
+    color: var(--light-grey);
+    font-family: var(--font-sans);
+}
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Full viewport height */
+    background-image: linear-gradient(to right, var(--neon-blue), var(--neon-pink));
+    text-align: center;
+}
+
+.hero-body {
+    padding: 20px;
+}
+
+.title {
+    color: var(--neon-pink);
+    font-size: 2.5rem;
+}
+.title.is-4 {
+    color: var(--light-grey);
+    margin-bottom: 1rem;
+}
+
+.subtitle {
+    color: var(--neon-blue);
+    font-size: 1.5rem;
+}
+
+.input {
+    background-color: transparent;
+    border: 2px solid var(--neon-blue);
+    color: var(--light-grey);
+}
+
+.button.is-success {
+    background-color: var(--neon-blue);
+    border-color: transparent;
+    color: white;
+    padding: 10px 30px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.button.is-success:hover {
+    background-color: var(--neon-pink);
+}
+.features {
+    padding: 50px 20px;
+    background-color: var(--dark-bg);
+    text-align: center;
+    padding: 4rem 0;
+}
+.feature-icon {
+    height: 100px; /* Adjust size as necessary */
+    margin-bottom: 1rem;
+    filter: drop-shadow(0 0 10px var(--neon-blue)); /* Neon glow effect */
+}
+.feature p {
+    color: var(--light-grey);
+    max-width: 80%; /* Makes the text more readable */
+    margin: 0 auto; /* Centers the text */
+}
+
+.features .column {
+    margin: 10px;
+}
+
+.features h4 {
+    color: var(--neon-pink);
+}
+.interactive-demo, .testimonials {
+    padding: 50px 20px;
+    background: linear-gradient(to bottom, var(--neon-blue), var(--dark-bg));
+}
+
+.interactive-demo button, .final-cta button {
+    background-color: var(--neon-pink);
+    color: white;
+}
+
+.testimonial-slider {
+    color: var(--light-grey);
+}
+.final-cta {
+    background-color: var(--dark-bg);
+    color: var(--light-grey);
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.footer {
+    background-color: #000;
+    color: var(--light-grey);
+    padding: 20px;
+    text-align: center;
+}
+
+.footer a {
+    color: var(--neon-pink);
+}

@@ -1,0 +1,20 @@
+routes:
+  /about/:
+    template: about
+  /contact/:
+    template: contact
+  /signup/:
+    template: signup
+
+collections:
+  /:
+    permalink: /{slug}/
+    template: index
+    filter: 'tag:-hidden'
+  /blog/:
+    permalink: /blog/{slug}/
+    template: blog
+
+taxonomies:
+  tag: /tag/{slug}/
+  author: /author/{slug}/

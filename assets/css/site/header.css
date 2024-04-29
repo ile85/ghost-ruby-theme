@@ -1,0 +1,23 @@
+.gh-head {
+    background-color: transparent;
+}
+
+.gh-head-menu a {
+    transition: color 0.3s ease;
+}
+
+.gh-head-menu a:hover {
+    color: #7b68ee; /* Change color on hover */
+    text-decoration: underline; /* Add an underline on hover */
+}
+.gh-head-menu,
+.gh-head-actions {
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.005em;
+}
+
+.gh-head-btn {
+    --multiplier: 1.3;
+}
