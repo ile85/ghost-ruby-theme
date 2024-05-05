@@ -1,19 +1,9 @@
-.signup-page {
-    --dark-bg: #121212; /* Dark background for the base */
-    --neon-blue: #00d1ff; /* Updated neon blue for a brighter look */
-    --neon-pink: #ff4dbf; /* Neon pink for high contrast elements */
-    --light-grey: #cccccc; /* Light grey for less critical text */
-    --font-sans: 'Roboto', sans-serif; /* Ensuring modern, clean font */
-}
-
-.signup-page body {
-    background-color: var(--dark-bg);
-    color: var(--light-grey);
-    font-family: var(--font-sans);
-}
-
-.signup-page .hero {
-    background-image: linear-gradient(to right, var(--neon-blue), var(--neon-pink));
+:root {
+    --dark-bg: #121212; /* Dark grey for backgrounds */
+    --neon-blue: #72e1d1; /* Neon blue for accents */
+    --neon-pink: #ff4dbf; /* Neon pink for additional accents */
+    --light-grey: #cccccc; /* Light grey for text */
+    --font-sans: 'Roboto', sans-serif; /* Modern, clean sans-serif font */
 }
 
 body {
@@ -26,17 +16,41 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh; /* Full viewport height */
-    background-image: linear-gradient(to right, var(--neon-blue), var(--neon-pink));
+    background-size: 400% 400%;
+    animation: GradientShift 15s ease infinite;
     text-align: center;
+    position: relative; /* Ensure it is positioned relative for z-index to work */
 }
-
+@keyframes GradientShift {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
 .hero-body {
     padding: 20px;
+    z-index: 2; /* Make sure this is above any background elements */
+    position: relative; /* Ensure it is positioned relative for z-index to work */
+}
+
+.hero-cta {
+    font-size: 1.5rem; /* Larger font size */
+    padding: 15px 50px; /* Larger padding for a bigger button */
+    background-color: var(--neon-blue); /* Eye-catching background color */
+    color: #ffffff; /* Contrast text color */
+    border-radius: 30px; /* Rounded corners for modern look */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
+.hero-cta:hover,
+.hero-cta:focus {
+    background-color: var(--neon-pink); /* Change color on hover */
+    transform: scale(1.05); /* Slight scale up on hover */
 }
 
 .title {
-    color: var(--neon-pink);
-    font-size: 2.5rem;
+    font-size: 3rem; /* Increased size for impact */
+    font-weight: 700; /* Bold weight for importance */
+    color: var(--neon-pink); /* Making title pop */
 }
 .title.is-4 {
     color: var(--light-grey);
@@ -44,14 +58,27 @@ body {
 }
 
 .subtitle {
-    color: var(--neon-blue);
-    font-size: 1.5rem;
+    font-size: 1.8rem;
+    font-weight: 300; /* Lighter weight for contrast */
+    color: var(--light-grey); /* Subdued tone for balance */
 }
 
 .input {
     background-color: transparent;
     border: 2px solid var(--neon-blue);
     color: var(--light-grey);
+}
+.input, .button {
+    position: relative; /* Ensure they are also positioned for z-index */
+    z-index: 3; /* Higher than .hero-body for safety */
+}
+.control.has-icons-left .input {
+    padding-left: 2.5em;  /* Adjust padding to make room for the icon */
+}
+
+.control.has-icons-left .icon.is-left {
+    left: 0.5em;  /* Adjust left position to align the icon inside the input field */
+    z-index: 4;   /* Ensure the icon does not overlap the input text */
 }
 
 .button.is-success {
