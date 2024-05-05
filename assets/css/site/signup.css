@@ -1,9 +1,19 @@
-:root {
-    --dark-bg: #121212; /* Dark grey for backgrounds */
-    --neon-blue: #72e1d1; /* Neon blue for accents */
-    --neon-pink: #ff4dbf; /* Neon pink for additional accents */
-    --light-grey: #cccccc; /* Light grey for text */
-    --font-sans: 'Roboto', sans-serif; /* Modern, clean sans-serif font */
+.signup-page {
+    --dark-bg: #121212; /* Dark background for the base */
+    --neon-blue: #00d1ff; /* Updated neon blue for a brighter look */
+    --neon-pink: #ff4dbf; /* Neon pink for high contrast elements */
+    --light-grey: #cccccc; /* Light grey for less critical text */
+    --font-sans: 'Roboto', sans-serif; /* Ensuring modern, clean font */
+}
+
+.signup-page body {
+    background-color: var(--dark-bg);
+    color: var(--light-grey);
+    font-family: var(--font-sans);
+}
+
+.signup-page .hero {
+    background-image: linear-gradient(to right, var(--neon-blue), var(--neon-pink));
 }
 
 body {
