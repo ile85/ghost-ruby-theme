@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="{{@site.locale}}">
-    
 
 <head>
     <meta charset="utf-8">
@@ -11,10 +10,8 @@
     <meta property="og:url" content="https://ikoconnect.com/start-creating-engaging-content-with-ai/" />
     <meta name="twitter:card" content="summary_large_image" />
     <title>{{meta_title}}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css">
     <link rel="stylesheet" href="{{asset "built/screen.css"}}">
-    
-    
-
     {{ghost_head}}
 </head>
 
@@ -36,7 +33,6 @@
                 <button class="gh-search gh-icon-btn" aria-label="Search this site" data-ghost-search>{{> "icons/search"}}</button>
                 <button class="gh-burger"></button>
             </div>
-
             <nav class="gh-head-menu">
                 {{navigation}}
                 {{#unless @site.members_enabled}}
@@ -45,7 +41,6 @@
                     {{/match}}
                 {{/unless}}
             </nav>
-
             <div class="gh-head-actions">
                 {{#unless @site.members_enabled}}
                     {{^match @custom.navigation_layout "Stacked"}}
@@ -89,22 +84,21 @@
             </div>
         </div>
     </footer>
-
 </div>
 
 {{#is "post, page"}}
     {{> "pswp"}}
 {{/is}}
 
-<script src="{{asset 'js/dynamicEffects.js'}}"></script>
-<script src="{{asset '/js/lib/particles.js'}}"></script>
-<script src="{{asset '/js/lib/particle-background.js'}}"></script>
-<script src="{{asset 'js/singup/interactiveDemo.js'}}"></script>
-<script src="{{asset 'js/singup/testimonialSlider.js'}}"></script>
+<script src="{{asset '/js/effects/particles.js'}}" defer></script>
+<script src="{{asset '/js/effects/particlesSetup.js'}}" defer></script>
+<script src="{{asset 'js/singup/interactiveDemo.js'}}" defer></script>
+<script src="{{asset 'js/singup/testimonialSlider.js'}}" defer></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-RC1S2M3X2P"></script>
 <script src="{{asset "js/Google-Analytics/index.js"}}"></script>
 <script src="{{asset 'js/imagesloaded.pkgd.min.js'}}"></script>
-<script src="{{asset 'js/vendor/reframe.min.js'}}"></script>
+<script src="{{asset 'js/reframe.min.js'}}" defer></script>
+<script src="{{asset 'js/main.js'}}"></script>
 <script src="{{asset "built/main.min.js"}}"></script>
 
 {{ghost_foot}}

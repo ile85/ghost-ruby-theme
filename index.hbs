@@ -1,7 +1,7 @@
 {{!< default}}
 <div class="gh-outer">
     <main class="site-main gh-inner">
-        <!-- Hero Section -->
+        <!-- Existing Hero Section -->
         <section id="hero" class="hero">
             <div class="hero-content">
                 <h1 class="hero-title">Empower Your Marketing with AI</h1>
@@ -10,12 +10,31 @@
             </div>
             <canvas class="particles-js-canvas-el"></canvas>
         </section>
-        <!-- Post Feed -->
+        <!-- Post Feed Section -->
         <div class="post-feed gh-feed">
             {{#foreach posts}}
                 {{> "loop"}}
             {{/foreach}}
         </div>
-    </main>
+        
+        <div class="glide">
+    <div class="glide__track" data-glide-el="track">
+        <ul class="glide__slides">
+            {{#get "posts" filter="featured:true" limit="5"}}
+                {{#foreach posts}}
+                    <li class="glide__slide">
+                        <a href="{{url}}">
+                            <img src="{{feature_image}}" alt="{{title}}">
+                            <h3>{{title}}</h3>
+                        </a>
+                        <p>{{custom_excerpt}}</p>
+                    </li>
+                {{/foreach}}
+            {{/get}}
+        </ul>
+    </div>
 </div>
-</body>
+
+</main>
+
+</div>

@@ -11,14 +11,7 @@ body {
     color: var(--light-grey);
     font-family: var(--font-sans);
 }
-.hero {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    animation: GradientShift 15s ease infinite;
-    text-align: center;
-    position: relative; /* Ensure it is positioned relative for z-index to work */
-}
+
 @keyframes GradientShift {
     0% {background-position: 0% 50%;}
     50% {background-position: 100% 50%;}
