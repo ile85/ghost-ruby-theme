@@ -16,6 +16,7 @@
 </head>
 
 <body class="{{body_class}}{{{block "body_class"}}} is-head-{{#match @custom.navigation_layout "Logo on the left"}}left-logo{{else match @custom.navigation_layout "Logo in the middle"}}middle-logo{{else}}stacked{{/match}}{{#match @custom.title_font "=" "Elegant serif"}} has-serif-title{{/match}}{{#match @custom.body_font "=" "Elegant serif"}} has-serif-body{{/match}}">
+<div id="particles-js"></div>
 <div class="gh-site">
 
     <header id="gh-head" class="gh-head gh-outer">
@@ -90,15 +91,14 @@
     {{> "pswp"}}
 {{/is}}
 
-<script src="{{asset '/js/lib/particles.js'}}" defer></script>
-<script src="{{asset '/js/effects/particlesSetup.js'}}" defer></script>
-<script src="{{asset 'js/singup/interactiveDemo.js'}}" defer></script>
-<script src="{{asset 'js/singup/testimonialSlider.js'}}" defer></script>
+<script src="{{asset 'js/vendor/reframe.min.js'}}"></script>
+<script src="{{asset '/js/lib/particles.js'}}"></script>
+<script src="{{asset 'js/effects/particlesSetup.js'}}"></script> <!-- Ensure this exists -->
+<script src="{{asset 'js/singup/interactiveDemo.js'}}"></script>
+<script src="{{asset 'js/singup/testimonialSlider.js'}}"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-RC1S2M3X2P"></script>
 <script src="{{asset "js/Google-Analytics/index.js"}}"></script>
 <script src="{{asset 'js/imagesloaded.pkgd.min.js'}}"></script>
-<script src="{{asset 'js/vendor/reframe.min.js'}}" defer></script>
-<script src="{{asset 'js/main.js'}}"></script>
 <script src="{{asset "built/main.min.js"}}"></script>
 
 {{ghost_foot}}
