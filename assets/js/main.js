@@ -1,4 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
+    (function () {
+        pagination(true);
+    })();
     // Smooth Scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
