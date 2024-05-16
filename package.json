@@ -104,6 +104,7 @@
         "react": "^18.3.1",
         "react-dom": "^18.3.1",
         "react-slick": "^0.30.2",
-        "reframe.js": "^4.0.2"
+        "reframe.js": "^4.0.2",
+        "swiper": "^11.1.1"
     }
 }

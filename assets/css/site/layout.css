@@ -3,15 +3,31 @@
     flex-direction: column;
     min-height: 100vh;
 }
+.site-main {
+    padding-top: 10px;  /* Reduced from 20px */
+    padding-bottom: 10px;  /* Reduced from 20px */
+}
+.site-content {
+    flex-grow: 1;
+    padding-top: 10px;  /* Adjust based on your design */
+    padding-bottom: 10px;  /* Adjust based on your design */
+}
 
 .site-content {
     flex-grow: 1;
-    padding-top: 30px;
-    padding-bottom: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 .page-template .site-content {
     padding-block: 0;
+}
+
+@media (max-width: 768px) {
+    .site-content {
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
 }
 
 @media (min-width: 992px) {
