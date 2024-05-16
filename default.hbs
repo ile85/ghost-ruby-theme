@@ -4,10 +4,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta property="og:title" content="Transform Your Content with AI-Powered Tools" />
-    <meta property="og:description" content="Join thousands of marketers enhancing their content strategies with our AI. Sign up today!" />
-    <meta property="og:image" content="URL_to_image" />
-    <meta property="og:url" content="https://ikoconnect.com/start-creating-engaging-content-with-ai/" />
+    <meta property="og:title" content="{{meta_title}} | AI-Powered Content Creation" />
+    <meta property="og:description" content="Empower your content strategy with our cutting-edge AI tools. Personalize content at scale and track engagement seamlessly." />
+    <meta property="og:image" content="{{@site.url}}/assets/images/hero-background.jpg" />
+    <meta property="og:url" content="{{@site.url}}" />
     <meta name="twitter:card" content="summary_large_image" />
     <title>{{meta_title}}</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css">
@@ -16,7 +16,7 @@
 </head>
 
 <body class="{{body_class}}{{{block "body_class"}}} is-head-{{#match @custom.navigation_layout "Logo on the left"}}left-logo{{else match @custom.navigation_layout "Logo in the middle"}}middle-logo{{else}}stacked{{/match}}{{#match @custom.title_font "=" "Elegant serif"}} has-serif-title{{/match}}{{#match @custom.body_font "=" "Elegant serif"}} has-serif-body{{/match}}">
-<div id="particles-js"></div>
+
 <div class="gh-site">
 
     <header id="gh-head" class="gh-head gh-outer">
@@ -93,7 +93,7 @@
 
 <script src="{{asset 'js/vendor/reframe.min.js'}}"></script>
 <script src="{{asset '/js/lib/particles.js'}}"></script>
-<script src="{{asset 'js/effects/particlesSetup.js'}}"></script> <!-- Ensure this exists -->
+<script src="{{asset 'assets/js/effects/particlesSetup.js'}}"></script> <!-- Ensure this exists -->
 <script src="{{asset 'js/singup/interactiveDemo.js'}}"></script>
 <script src="{{asset 'js/singup/testimonialSlider.js'}}"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-RC1S2M3X2P"></script>
@@ -102,6 +102,6 @@
 <script src="{{asset "built/main.min.js"}}"></script>
 
 {{ghost_foot}}
-
+<div id="particles-js"></div>
 </body>
 </html>
