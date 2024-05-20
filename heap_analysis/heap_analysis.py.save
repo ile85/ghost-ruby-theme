@@ -1,0 +1,42 @@
+import json
+import ijson
+
+# Define the path to the heap snapshot file
+file_path = "/var/www/ghost/content/themes/ruby/heap_analysis/Heap-20240520T132247.heapsnapshot"
+
+def analyze_heap_snapshot(file_path):
+    results = {
+        "total_nodes": 0,
+        "total_edges": 0,
+        "total_size": 0,
+        "nodes": {}
+    }
+    
+    with open(file_path, "r") as file:
+        objects = ijson.items(file, 'objects.item')
+        for obj in objects:
+            results["total_nodes"] += 1
+            results["total_edges"] += len(obj.get('edges', []))
+            results["total_size"] += obj.get('self_size', 0)
+            node_type = obj.get('type', 'unknown')
+            if node_type not in results["nodes"]:
+                results["nodes"][node_type] = {
+                    "count": 0,
+                    "total_size": 0
+                }
+            results["nodes"][node_type]["count"] += 1
+            results["nodes"][node_type]["total_size"] += obj.get('self_size', 0)
+    
+    return results
+
+# Analyze the heap snapshot
+results = analyze_heap_snapshot(file_path)
+
+# Print the results
+print("Heap Snapshot Analysis:")
+print(f"Total Nodes: {results['total_nodes']}")
+print(f"Total Edges: {results['total_edges']}")
+print(f"Total Size: {results['total_size']} bytes")
+print("Node Types:")
+for node_type, data in results["nodes"].items():
+    print(f"  {node_type}: {data['count']} nodes, {data['total_size']} bytes")
