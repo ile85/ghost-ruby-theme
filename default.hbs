@@ -11,14 +11,13 @@
     <title>{{meta_title}}</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css">
     <link rel="stylesheet" href="{{asset "built/screen.css"}}">
+    <link rel="stylesheet" href="{{asset "assets/css/custom.css"}}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
     {{ghost_head}}
 </head>
-
 <body class="{{body_class}}{{{block "body_class"}}} is-head-{{#match @custom.navigation_layout "Logo on the left"}}left-logo{{else match @custom.navigation_layout "Logo in the middle"}}middle-logo{{else}}stacked{{/match}}{{#match @custom.title_font "=" "Elegant serif"}} has-serif-title{{/match}}{{#match @custom.body_font "=" "Elegant serif"}} has-serif-body{{/match}}">
 
 <div class="gh-site">
-
     <header id="gh-head" class="gh-head gh-outer">
         <div class="gh-head-inner gh-inner">
             <div class="gh-head-brand">
@@ -66,48 +65,58 @@
         </div>
     </header>
 
-    <div class="site-content">
-        <section class="hero" data-aos="fade-up">
-            <h1>Revolutionize Content Creation with AI</h1>
-            <button class="cta">Get Started Free</button>
-        </section>
+    <section class="hero" data-aos="fade-up">
+        <h1>Revolutionize Content Creation with AI</h1>
+        <p>Empower your content strategy with our cutting-edge AI tools. Personalize content at scale and track engagement seamlessly.</p>
+        <button class="cta">Get Started Free</button>
+    </section>
 
-        <section class="features container" data-aos="fade-up">
-            <div class="feature" data-aos="fade-up" data-aos-delay="100">Feature 1</div>
-            <div class="feature" data-aos="fade-up" data-aos-delay="200">Feature 2</div>
-            <div class="feature" data-aos="fade-up" data-aos-delay="300">Feature 3</div>
-        </section>
+    <section class="features" data-aos="fade-up">
+        <h2>Key Features</h2>
+        <div class="feature">
+            <img src="{{asset "images/automated-insights-icon.png"}}" alt="Automated Insights">
+            <h3>Automated Insights</h3>
+            <p>Generate valuable insights automatically to enhance your content strategy.</p>
+        </div>
+        <div class="feature">
+            <img src="{{asset "images/faster-execution-icon.png"}}" alt="Faster Execution">
+            <h3>Faster Execution</h3>
+            <p>Accelerate your content creation process with AI-driven tools.</p>
+        </div>
+        <div class="feature">
+            <img src="{{asset "images/seo-optimization-icon.png"}}" alt="SEO Optimization">
+            <h3>SEO Optimization</h3>
+            <p>Optimize your content for search engines effortlessly.</p>
+        </div>
+    </section>
 
-        <section class="testimonials" data-aos="fade-up">
-            <h2>What Our Users Say</h2>
-            <div class="testimonial" data-aos="fade-up" data-aos-delay="100">
-                <p>"This AI tool has revolutionized our content creation!" - User A</p>
-            </div>
-            <div class="testimonial" data-aos="fade-up" data-aos-delay="200">
-                <p>"Efficiency and quality, all in one." - User B</p>
-            </div>
-        </section>
+    <section class="testimonials" data-aos="slide-up">
+        <h2>What Our Users Say</h2>
+        <div class="testimonial">
+            <p>"This AI tool has revolutionized our content creation!" - User A</p>
+        </div>
+        <div class="testimonial">
+            <p>"Efficiency and quality, all in one." - User B</p>
+        </div>
+    </section>
 
-        <section class="badges" data-aos="fade-up">
-            <h2>Our Awards</h2>
-            <div class="badge" data-aos="fade-up" data-aos-delay="100">
-                <img src="{{asset "images/award1.png"}}" alt="Award 1">
-            </div>
-            <div class="badge" data-aos="fade-up" data-aos-delay="200">
-                <img src="{{asset "images/award2.png"}}" alt="Award 2">
-            </div>
-        </section>
+    <section class="badges" data-aos="fade-up">
+        <h2>Our Awards</h2>
+        <div class="badge">
+            <img src="{{asset "images/award1.png"}}" alt="Award 1">
+        </div>
+        <div class="badge">
+            <img src="{{asset "images/award2.png"}}" alt="Award 2">
+        </div>
+    </section>
 
-        <section class="signup-form" data-aos="fade-up">
-            <h2>Sign Up for Our Newsletter</h2>
-            <form action="/signup" method="POST">
-                <input type="email" name="email" placeholder="Enter your email">
-                <button type="submit">Sign Up</button>
-            </form>
-        </section>
-
-        {{{body}}}
-    </div>
+    <section class="signup-form" data-aos="fade-up">
+        <h2>Sign Up for Our Newsletter</h2>
+        <form action="/signup" method="POST">
+            <input type="email" name="email" placeholder="Enter your email">
+            <button type="submit">Sign Up</button>
+        </form>
+    </section>
 
     <footer class="gh-foot{{#unless @site.secondary_navigation}} no-menu{{/unless}} gh-outer">
         <div class="gh-foot-inner gh-inner">
@@ -132,15 +141,13 @@
 
 <script src="{{asset 'js/vendor/reframe.min.js'}}"></script>
 <script src="{{asset '/js/lib/particles.js'}}"></script>
-<script src="{{asset 'assets/js/effects/particlesSetup.js'}}"></script> <!-- Ensure this exists -->
+<script src="{{asset 'assets/js/effects/particlesSetup.js'}}"></script>
 <script src="{{asset 'js/singup/interactiveDemo.js'}}"></script>
 <script src="{{asset 'js/singup/testimonialSlider.js'}}"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-RC1S2M3X2P"></script>
 <script src="{{asset "js/Google-Analytics/index.js"}}"></script>
 <script src="{{asset 'js/imagesloaded.pkgd.min.js'}}"></script>
 <script src="{{asset "built/main.min.js"}}"></script>
-
-<!-- AOS Scripts -->
 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 <script>
     AOS.init();
