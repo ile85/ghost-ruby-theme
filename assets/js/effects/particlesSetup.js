@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 "events": {
                     "onhover": {
                         "enable": true,
-                        "mode": "repulse"
+                        "mode": "grab" // Change this to "grab" to make particles follow the mouse pointer
                     },
                     "onclick": {
                         "enable": true,
