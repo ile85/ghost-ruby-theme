@@ -1,11 +1,9 @@
-// Ensure the particles.js library is included or imported before this script
 document.addEventListener('DOMContentLoaded', function () {
     if (window.particlesJS) {
-        // Custom magnetizing effect
         particlesJS('particles-js', {
             "particles": {
                 "number": {
-                    "value": 50,
+                    "value": 30,
                     "density": {
                         "enable": true,
                         "value_area": 800
@@ -76,7 +74,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 "events": {
                     "onhover": {
                         "enable": true,
-                        "mode": "custom"  // Custom interaction mode
+                        "mode": "repulse"
                     },
                     "onclick": {
                         "enable": true,
@@ -107,39 +105,10 @@ document.addEventListener('DOMContentLoaded', function () {
                     },
                     "remove": {
                         "particles_nb": 2
-                    },
-                    "custom": {  // Custom mode definition
-                        "distance": 200,
-                        "duration": 0.4
                     }
                 }
             },
             "retina_detect": true
         });
-
-        // Custom interaction for magnetizing effect
-        const pJS = window.pJSDom[0].pJS;
-        const mousePos = { x: 0, y: 0 };
-
-        // Update mouse position
-        document.addEventListener('mousemove', (e) => {
-            mousePos.x = e.clientX;
-            mousePos.y = e.clientY;
-        });
-
-        // Custom draw function to apply magnet effect
-        pJS.fn.interact.custom = function() {
-            pJS.particles.array.forEach((particle) => {
-                const dx = mousePos.x - particle.x;
-                const dy = mousePos.y - particle.y;
-                const distance = Math.sqrt(dx * dy + dy * dy);
-
-                if (distance < 200) {
-                    const factor = (200 - distance) / 200;
-                    particle.vx = dx * factor * 0.05;
-                    particle.vy = dy * factor * 0.05;
-                }
-            });
-        };
     }
 });
