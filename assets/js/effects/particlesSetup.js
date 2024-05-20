@@ -1,10 +1,9 @@
-// Ensure the particles.js library is included or imported before this script
 document.addEventListener('DOMContentLoaded', function () {
     if (window.particlesJS) {
         particlesJS('particles-js', {
             "particles": {
                 "number": {
-                    "value": 50,
+                    "value": 30,
                     "density": {
                         "enable": true,
                         "value_area": 800
@@ -75,7 +74,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 "events": {
                     "onhover": {
                         "enable": true,
-                        "mode": "repulse"
+                        "mode": "grab" // Change this to "grab" to make particles follow the mouse pointer
                     },
                     "onclick": {
                         "enable": true,

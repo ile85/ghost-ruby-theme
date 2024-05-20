@@ -1,10 +1,11 @@
-/* custom.css */
-
 /* Grid System */
 .container {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   gap: 20px;
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 0 20px;
 }
 
 .header, .hero, .features, .testimonials, .cta, .footer {
@@ -24,6 +25,8 @@ body {
   background-color: #121212;
   color: #e0e0e0;
   font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 a {
@@ -33,7 +36,7 @@ a {
 .header, .hero, .features, .testimonials, .cta, .footer {
   background-color: #1f1f1f;
   border-radius: 8px;
-  margin: 10px;
+  margin: 10px 0;
   padding: 20px;
 }
 
@@ -48,82 +51,73 @@ button.cta {
   padding: 10px 20px;
   border-radius: 25px;
   cursor: pointer;
-  transition: background-color 0.3s, transform 0.3s;
+  transition: background-color 0.3s;
+  margin-top: 20px;
 }
 
 button.cta:hover {
   background-color: #00bfa5;
-  transform: scale(1.1);
+}
+
+/* Navigation */
+.gh-head-menu {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+}
+
+.gh-head-menu a {
+  color: #00ffcc;
+  text-decoration: none;
+  padding: 10px;
+}
+
+.gh-burger {
+  display: none;
+}
+
+.gh-head-menu.is-active {
+  display: block;
 }
 
 /* Hero Section */
 .hero {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   text-align: center;
-  padding: 50px 20px;
-  background: url('{{asset "images/hero-background.jpg"}}') no-repeat center center;
-  background-size: cover;
-  position: relative;
-  color: #fff;
-}
-
-.hero:before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(18, 18, 18, 0.8);
-  z-index: 1;
+  padding: 60px 20px;
 }
 
 .hero h1 {
-  z-index: 2;
-  font-size: 3rem;
+  font-size: 3em;
+  margin-bottom: 20px;
 }
 
 .hero p {
-  z-index: 2;
-  font-size: 1.5rem;
-}
-
-.hero .cta {
-  z-index: 2;
-  margin-top: 20px;
+  font-size: 1.2em;
+  margin-bottom: 30px;
 }
 
 /* Features Section */
 .features {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+  padding: 40px 20px;
 }
 
 .feature {
-  flex: 1 1 calc(33.333% - 40px);
-  margin: 20px;
   text-align: center;
-  position: relative;
 }
 
 .feature img {
   width: 100px;
   height: auto;
-  margin-bottom: 10px;
-}
-
-.feature h3 {
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 /* Testimonials Section */
 .testimonials {
-  margin: 50px 0;
   text-align: center;
+  padding: 40px 20px;
 }
 
 .testimonial {
@@ -133,11 +127,12 @@ button.cta:hover {
   border-radius: 8px;
 }
 
-/* Badges */
+/* Badges Section */
 .badges {
   display: flex;
   justify-content: space-around;
   margin: 50px 0;
+  padding: 40px 20px;
 }
 
 .badge img {
@@ -148,7 +143,7 @@ button.cta:hover {
 /* Sign Up Form */
 .signup-form {
   text-align: center;
-  margin: 50px 0;
+  padding: 40px 20px;
 }
 
 .signup-form input {
@@ -156,8 +151,6 @@ button.cta:hover {
   margin-right: 10px;
   border-radius: 25px;
   border: 1px solid #00ffcc;
-  background-color: #1f1f1f;
-  color: #fff;
 }
 
 .signup-form button {
@@ -167,35 +160,58 @@ button.cta:hover {
   padding: 10px 20px;
   border-radius: 25px;
   cursor: pointer;
-  transition: background-color 0.3s, transform 0.3s;
+  transition: background-color 0.3s;
 }
 
 .signup-form button:hover {
   background-color: #00bfa5;
-  transform: scale(1.1);
-}
-
-/* Footer */
-footer {
-  background-color: #1f1f1f;
-  padding: 20px 0;
-  text-align: center;
-  color: #e0e0e0;
-}
-
-footer a {
-  color: #00ffcc;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .features, .badges {
+  .container {
+      grid-template-columns: 1fr;
+  }
+
+  .feature, .testimonial {
+      grid-column: span 12;
+  }
+
+  .gh-head-menu {
+      display: none;
       flex-direction: column;
       align-items: center;
   }
 
-  .feature, .testimonial, .badge {
-      flex: 1 1 100%;
-      margin: 10px 0;
+  .gh-burger {
+      display: block;
+      cursor: pointer;
   }
+
+  .hero h1 {
+      font-size: 2.5em;
+  }
+
+  .hero p {
+      font-size: 1em;
+  }
+
+  .features {
+      grid-template-columns: 1fr;
+  }
+}
+
+/* Additional Spacing */
+.section-padding {
+  padding: 60px 0;
+}
+
+.section-title {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.section-title h2 {
+  font-size: 2em;
+  margin-bottom: 10px;
 }
